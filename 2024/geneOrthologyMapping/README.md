@@ -41,7 +41,7 @@ datasets download gene gene-id --inputfile horse_genelist.txt --ortholog 9606 --
 
 Decompress file: horse_human_orthologs.zip
 
-This will contain the following structure:
+This will contain the following structure:<br>
 -ncbi_dataset/data/<br>
 |<br>
 |-data_report.jsonl  dataset_catalog.json  extracted_human_gene_ids.txt  parse_jsonl.py  protein.faa  rna.fna<br>
