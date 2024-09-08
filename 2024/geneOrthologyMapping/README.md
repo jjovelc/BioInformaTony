@@ -1,12 +1,12 @@
 Below are the steps to follow to reproduce the pipeline presented in the video.
 
 1. Get annotations for the organism of interest, in this case Equus caballus (using script retrieve_biomaRt_annotations.R). 
-- Resulting table will look like this:
-ensembl_transcript_id	ensembl_gene_id	external_gene_name	entrezgene_id	wikigene_description	name_1006	definition_1006	namespace_1003
-...
-ENSECAT00000029856	ENSECAG00000027684	MT-ND1	807846	NADH dehydrogenase subunit 1	membrane	A lipid bilayer along with all the proteins and protein complexes embedded in it and attached to it.	cellular_component
-(base) temp > tail ecaballus_transcript_attributes_240908.tsv 
-ENSECAT00000126620	ENSECAG00000024263	PRKRA	100067259	protein activator of interferon induced protein kinase EIF2AK2	double-stranded RNA binding	Binding to double-stranded RNA.	molecular_function
+- First four columns of resulting table will look like this:
+|                    |                    |                   |              | 
+ensembl_transcript_id	  ensembl_gene_id	    external_gene_name	 entrezgene_id	
+|--------------------|--------------------|-------------------|--------------|
+| ENSECAT00000029856 | ENSECAG00000027684 |	MT-ND1	          | 807846       |	
+| ENSECAT00000126620 | ENSECAG00000024263	| PRKRA	            | 100067259    |
 
 - Since the Entrez ID is in column 4, to extract the Entrez ids, use the following command:
 
@@ -14,7 +14,7 @@ ENSECAT00000126620	ENSECAG00000024263	PRKRA	100067259	protein activator of inter
 sed 1d ecaballus_transcript_attributes_240908.tsv | cut -f 4 | grep -v "NA" | sort | uniq > horse_genelist.txt 	
 ```
 
-2. Download NCBI datasets from the following link: https://ftp.ncbi.nih.gov/gene/DATA/
+1. Download NCBI datasets from the following link: https://ftp.ncbi.nih.gov/gene/DATA/
 
 - Download files: gene_orthologs.gz and gene2accession.gz 
 - Decompress downloaded files
@@ -69,7 +69,7 @@ python add_geneSymbol.py
 | 19	        | ABCA1	       | 100054241	    | ABCA1        |
 | 20	        | ABCA2	       | 100067889	    | ABCA2        |
 | 21	        | ABCA3	       | 100068313	    | ABCA3        |
-|-------------|--------------|----------------|--------------|
+
 
 - If you want to extract records for genes symbols that are identical between the two organisms, do:
 
