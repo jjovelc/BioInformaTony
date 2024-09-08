@@ -3,7 +3,7 @@ Below are the steps to follow to reproduce the pipeline presented in the video.
 1. Get annotations for the organism of interest, in this case Equus caballus (using script retrieve_biomaRt_annotations.R). 
 - First four columns of resulting table will look like this:
 
-| ensembl_transcript_id	| ensembl_gene_id	   | external_gene_name	 entrezgene_id	
+| ensembl_transcript_id	| ensembl_gene_id	   | external_gene_name	| entrezgene_id|	
 |-----------------------|--------------------|--------------------|--------------|
 | ENSECAT00000029856    | ENSECAG00000027684 | MT-ND1	            | 807846       |	
 | ENSECAT00000126620    | ENSECAG00000024263 | PRKRA	            | 100067259    |
