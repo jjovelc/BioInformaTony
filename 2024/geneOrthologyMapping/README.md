@@ -44,9 +44,9 @@ Decompress file: horse_human_orthologs.zip
 This will contain the following structure:<br>
 -ncbi_dataset/data/<br>
 |<br>
-|-data_report.jsonl  dataset_catalog.json  extracted_human_gene_ids.txt  parse_jsonl.py  protein.faa  rna.fna<br>
+|-data_report.jsonl  dataset_catalog.json  extracted_human_gene_ids.txt  protein.faa  rna.fna<br>
 
-5. Use script find_horse_orthologs.py to pair the extracted human orthologs gene IDs with the corresponding horse gene IDs using as input files ncbi_dataset/data/extracted_human_gene_ids.txt and gene_orthologs. This will generate output file human_to_horse_mapping.tsv.
+1. Use script find_horse_orthologs.py to pair the extracted human orthologs gene IDs with the corresponding horse gene IDs using as input files ncbi_dataset/data/extracted_human_gene_ids.txt and gene_orthologs. This will generate output file human_to_horse_mapping.tsv.
 
 ```bash
 python find_horse_orthologs.py
