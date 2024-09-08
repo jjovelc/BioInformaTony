@@ -32,7 +32,7 @@ grep -w "^9606\|^9796" gene2accession > gene2accession_human-horse
 	conda install -c conda-forge ncbi-datasets-cli # This install the commnand-line interface
 ```	
 	 
-4. Use the NCBI command line interface to look for human orthologs of the horse genes, with the following commands:
+4. Use the NCBI command line interface to look for human orthologs of the horse genes, with the following command:
 
 ```bash
 conda activate ncbi_datasets
@@ -42,9 +42,9 @@ datasets download gene gene-id --inputfile horse_genelist.txt --ortholog 9606 --
 Decompress file: horse_human_orthologs.zip
 
 This will contain the following structure:
--ncbi_dataset/data/
-|
-|-data_report.jsonl  dataset_catalog.json  extracted_human_gene_ids.txt  parse_jsonl.py  protein.faa  rna.fna
+-ncbi_dataset/data/<br>
+|<br>
+|-data_report.jsonl  dataset_catalog.json  extracted_human_gene_ids.txt  parse_jsonl.py  protein.faa  rna.fna<br>
 
 5. Use script find_horse_orthologs.py to pair the extracted human orthologs gene IDs with the corresponding horse gene IDs using as input files ncbi_dataset/data/extracted_human_gene_ids.txt and gene_orthologs. This will generate output file human_to_horse_mapping.tsv.
 
