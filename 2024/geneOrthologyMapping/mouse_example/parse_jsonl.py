@@ -1,4 +1,5 @@
 import json
+import re
 
 # Initialize a list to store human gene IDs
 human_gene_ids = []
@@ -14,11 +15,6 @@ with open('ncbi_dataset/data/data_report.jsonl', 'r') as file:
         if human_gene_id:
             human_gene_ids.append(human_gene_id)
 
-# Display the extracted human gene IDs
-print("Extracted Human Gene IDs:")
-print(human_gene_ids)
-
-# Optionally, save the list of human gene IDs to a file
-with open('extracted_human_gene_ids.txt', 'w') as output_file:
+with open('ncbi_dataset/data/extracted_human_gene_ids.txt', 'w') as output_file:
     for gene_id in human_gene_ids:
         output_file.write(f"{gene_id}\n")

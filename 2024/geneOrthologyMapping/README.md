@@ -44,15 +44,23 @@ Decompress file: horse_human_orthologs.zip
 This will contain the following structure:<br>
 -ncbi_dataset/data/<br>
 |<br>
-|-data_report.jsonl  dataset_catalog.json  extracted_human_gene_ids.txt  protein.faa  rna.fna<br>
+|-data_report.jsonl  dataset_catalog.json protein.faa  rna.fna<br>
 
-1. Use script find_horse_orthologs.py to pair the extracted human orthologs gene IDs with the corresponding horse gene IDs using as input files ncbi_dataset/data/extracted_human_gene_ids.txt and gene_orthologs. This will generate output file human_to_horse_mapping.tsv.
+5.  Parse ncbi_dataset/data/data_report.jsonl file containing the human orthologues.
+
+```bash
+python parse_jsonl.py
+```
+
+This will produce file ncbi_dataset/data/extracted_human_gene_ids.txt
+
+6. Use script find_horse_orthologs.py to pair the extracted human orthologs gene IDs with the corresponding horse gene IDs using as input files ncbi_dataset/data/extracted_human_gene_ids.txt and gene_orthologs. This will generate output file human_to_horse_mapping.tsv.
 
 ```bash
 python find_horse_orthologs.py
 ```
 
-6. Use script add_geneSymbol.py to add a gene symbol to the Entrez IDs. This script will use human_to_horse_mapping.tsv and gene2accession_human-horse as input and will produce the file with the final results: human_horse_symbols_mapping.tsv containing the mapping of orthologs. Such file will look like:
+7. Use script add_geneSymbol.py to add a gene symbol to the Entrez IDs. This script will use human_to_horse_mapping.tsv and gene2accession_human-horse as input and will produce the file with the final results: human_horse_symbols_mapping.tsv containing the mapping of orthologs. Such file will look like:
 
 ```bash
 python add_geneSymbol.py
